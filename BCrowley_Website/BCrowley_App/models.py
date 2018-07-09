@@ -39,3 +39,22 @@ class Media(models.Model):
 
     def __str__(self):
         return self.title
+
+class Inspiration(models.Model):
+
+    QUOTE = 'QT'
+    SPEECH = 'SP'
+    CREATIVE = 'CR'
+
+    TYPE_CHOICES = (
+    (QUOTE, 'Quote'),
+    (SPEECH, 'Speech'),
+    (CREATIVE, 'Creative'),
+    )
+
+    ins_type = models.CharField(max_length=264,unique=False,choices=TYPE_CHOICES)
+    id_name = models.CharField(max_length=264,unique=False)
+    title = models.CharField(max_length=264,unique=False)
+    cover_photo = models.URLField(max_length=264,unique=False)
+    online_reference = models.URLField(max_length=264,unique=False)
+    description = models.TextField(unique=False)
