@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <title>Brett Crowley</title>
+
+    <!-- Links -->
+
+      <link rel="icon" href="home/brettcrowley77/bcrowley-website/Personal_Website/static/img/favicon1.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link href="{% static "venobox/venobox.css" %}" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{% static "css/styles.css" %}" type="text/css" rel="stylesheet">
+    <link href="{% static "css/layout.css" %}" type="text/css" rel="stylesheet">
+
+    <!-- Metadata -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Brett Crowley's personal web site">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="author" content="Brett Crowley">
+    <meta http-equiv="pragma" content="no-cache">
+
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav id='topnav' class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="{% url 'BCrowley_App:index' %}">Brett Crowley</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'BCrowley_App:lists' %}">Lists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'BCrowley_App:projects' %}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'BCrowley_App:inspiration' %}">Inspiration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'BCrowley_App:ideas' %}">Ideas</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% block body_block %}
+
+    {%  endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="{% static "venobox/venobox.js" %}" type="text/javascript"></script>
+    <script src="{% static "javascript/mainscript.js" %}" type="text/javascript"></script>
+  </body>
+  <footer>
+    <nav id="contactinfo" class="navbar navbar-expand-lg fixed-bottom">
+      <div class='row'>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item col-lg-6 col-md-6 col-sm-6 col-xs-6"><a id='emailaddress' class="nav-link" href="#">brettcrowley77@gmail.com</a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</html>
