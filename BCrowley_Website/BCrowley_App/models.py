@@ -54,7 +54,10 @@ class Inspiration(models.Model):
 
     ins_type = models.CharField(max_length=264,unique=False,choices=TYPE_CHOICES)
     id_name = models.CharField(max_length=264,unique=False)
-    title = models.CharField(max_length=264,unique=False)
-    cover_photo = models.URLField(max_length=264,unique=False)
-    online_reference = models.URLField(max_length=264,unique=False)
+    cover_photo = models.URLField(max_length=264,unique=False, blank=True)
+    author=models.CharField(max_length=264,unique=False,default='Unknown')
+    online_reference = models.URLField(max_length=264,unique=False,blank=True)
     description = models.TextField(unique=False)
+
+    def __str__(self):
+        return self.id_name

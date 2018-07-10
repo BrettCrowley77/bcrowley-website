@@ -3,120 +3,19 @@
 {% block body_block %}
 {% load staticfiles %}
 <div id="library" class="container">
-
-  <div id="lists" class="row">
-    <div id="books" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <h2 class="category"><i class="fas fa-book"></i> Books</h2>
-      </div>
-    </div>
-    <div id="movies" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <h2 class="category"><i class="fas fa-film"></i> Movies</h2>
-      </div>
-    </div>
-    <div id="music" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <h2 class="category"><i class="fas fa-music"></i> Music</h2>
-      </div>
-    </div>
-    <div id="articles" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <h2 class="category"><i class="far fa-newspaper"></i> Articles</h2>
-      </div>
-    </div>
-  </div>
-
-  <!-- Book shelf contents -->
-  <div id="bookshelf" class= "row hide">
-
-    {% if book_list %}
-    {% for book in book_list %}
+  <!-- Inspiration contents -->
+  <div id="inspirationcontent" class= "row">
+    {% if inspiration_list %}
+    {% for inspiration in inspiration_list %}
     <div class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
       <div class='showcase'>
-        <a class="venobox_custom" data-vbtype="inline" data-gall="myGallery" href="#{{book.id_name}}"><img src='{{book.cover_photo}}' alt='{{book.title}} by {{book.author}}' class='center framed'></a>
-          <div id="{{book.id_name}}" class="nodisplay">
-              <div class="row">
-                <div class='column col-lg-6 col-md-6 col-sm-12 col-xs-12'>
-                  <img src='{{book.cover_photo}}' alt='{{book.title}} by {{book.author}}' class='reviewpic center'>
-                </div>
-                <div class='column col-lg-6 col-md-6 col-sm-12 col-xs-12'>
-                  <div class="reviewtext center">
-                    <h1 class='category'>My rating:
-                      {% for num in '012345' %}
-                      {% if forloop.counter0 < book.rating %}
-                      <i class="fas fa-star"></i>
-                      {% endif %}
-                      {% endfor %}
-                    </h1><br />
-                    <h2 class='category'><a href="{{book.online_reference}}" target='_blank'>Find it on Goodreads</a></h2>
-                    <p>{{book.review}}</p>
-                  </div>
-                </div>
-              </div>
-          </div>
-        <p>
-          {% for num in '012345' %}
-          {% if forloop.counter0 < book.rating %}
-          <i class="fas fa-star"></i>
-          {% endif %}
-          {% endfor %}
-        </p>
-      </div>
-    </div>
-    {% endfor%}
-    {% else %}
-      <p>No books found!</p>
-    {% endif %}
-  </div>
-
-  <!-- Movie shelf contents -->
-  <div id="movieshelf" class= "row hide">
-    {% if movie_list %}
-    {% for movie in movie_list %}
-    <div class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <a class="venobox" data-autoplay="true" data-vbtype="video" data-gall="myGallery" href='{{movie.online_reference}}' target='_blank'><img src='{{movie.cover_photo}}' alt='{{movie.title}}' class='center framed'></a>
-        <p>
-          {% for num in '012345' %}
-          {% if forloop.counter0 < movie.rating %}
-          <i class="fas fa-star"></i>
-          {% endif %}
-          {% endfor %}
-        </p>
+        <!-- <a href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' class='center framed'></a> -->
+        <p><em>{{inspiration.description}}</em></p>
+        <p>- {{inspiration.author}}</p>
       </div>
     </div>
     {% endfor %}
     {% endif %}
   </div>
-
-  <!-- Music shelf contents -->
-  <div id="musicshelf" class= "row hide">
-    {% if music_list %}
-    {% for music in music_list %}
-    <div class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <a class="venobox" data-autoplay="true" data-vbtype="video" data-gall="myGallery" href='{{music.online_reference}}' target='_blank'><img src='{{music.cover_photo}}' alt='{{music.title}}' class='center framed'></a>
-        <p><em>{{music.title}}</em>, by {{music.author}}</p>
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
-  </div>
-
-  <!-- Article shelf contents -->
-  <div id="articleshelf" class= "row hide">
-    {% if article_list %}
-    {% for article in article_list %}
-    <div class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <a href='{{article.online_reference}}' target='_blank'><img src='{{article.cover_photo}}' alt='{{article.title}}' class='center framed'></a>
-        <p><em>{{article.title}}</em>, by {{article.author}}</p>
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
-  </div>
-
 </div>
 {% endblock %}
