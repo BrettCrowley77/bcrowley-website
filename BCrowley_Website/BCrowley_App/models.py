@@ -61,3 +61,13 @@ class Inspiration(models.Model):
 
     def __str__(self):
         return self.id_name
+
+class Projects(models.Model):
+
+    project_name = models.CharField(max_length=264,unique=False)
+    cover_photo = models.URLField(max_length=264,unique=False, blank=True)
+    online_reference = models.URLField(max_length=264,unique=False,blank=True)
+    description = models.TextField(unique=False)
+
+    def __str__(self):
+        return self.project_name
