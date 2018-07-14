@@ -19,6 +19,6 @@ from BCrowley_App import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^/', include('BCrowley_App.urls')),
+    url(r'^', include('BCrowley_App.urls')),
     url(r'^admin/', admin.site.urls),
 ]
