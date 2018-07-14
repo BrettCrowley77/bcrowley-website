@@ -4,18 +4,27 @@
 {% load staticfiles %}
 <div id="library" class="container">
   <!-- Inspiration contents -->
-  <div id="inspirationcontent" class= "row">
-    {% if inspiration_list %}
-    {% for inspiration in inspiration_list %}
-    <div class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-      <div class='showcase'>
-        <!-- <a href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' class='center framed'></a> -->
-        <p><em>{{inspiration.description}}</em></p>
-        <p>- {{inspiration.author}}</p>
-      </div>
+  <div id="inspirationcontent" class='grid'>
+      <div class="grid-sizer"></div>
+      {% if inspiration_list %}
+        {% for inspiration in inspiration_list %}
+          {% if inspiration.ins_type == 'QT' %}
+          <div class='grid-item showcase'>
+            <!-- <a href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' class='center framed'></a> -->
+            <p><em>{{inspiration.description}}</em></p>
+            <p>- {{inspiration.author}}</p>
+          </div>
+          {% endif %}
+          {% if inspiration.ins_type == 'SP' %}
+          <div class='grid-item showcase'>
+            <a href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' class='center framed'></a>
+            <p><em>{{inspiration.description}}</em></p>
+            <p>- {{inspiration.author}}</p>
+          </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     </div>
-    {% endfor %}
-    {% endif %}
   </div>
 </div>
 {% endblock %}

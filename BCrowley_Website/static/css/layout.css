@@ -13,7 +13,7 @@
   margin-bottom: 15px;
 }
 
-#welcome>.row {
+.row {
   position: relative;
 }
 
@@ -76,4 +76,38 @@ iframe {
 
 .nodisplay {
   display: none;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* fluid 5 columns */
+.grid-sizer, .grid-item {
+  width: 31%;
+  margin: 1%;
+  height: auto;
+}
+
+/* 2 columns */
+.grid-item--width2 {
+  width: 48%;
+  margin: 1%;
+  height: auto;
+}
+
+.grid-item, .grid-item--width2 {
+  float: center;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
