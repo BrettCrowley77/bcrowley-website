@@ -17,7 +17,7 @@
           {% endif %}
           {% if inspiration.ins_type == 'SP' %}
           <div class='grid-item showcase'>
-            <a href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' class='center framed'></a>
+            <a class="venobox" data-autoplay="true" data-vbtype="video" data-gall="myGallery" href='{{inspiration.online_reference}}' target='_blank'><img src='{{inspiration.cover_photo}}' alt='{{inspiration.description}}' class='center framed'></a>
             <p><em>{{inspiration.description}}</em></p>
             <p>- {{inspiration.author}}</p>
           </div>
