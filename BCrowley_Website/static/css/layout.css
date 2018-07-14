@@ -87,18 +87,30 @@ iframe {
   flex-direction: column;
 }
 
-/* fluid 5 columns */
 .grid-sizer, .grid-item {
   width: 31%;
   margin: 1%;
   height: auto;
 }
 
-/* 2 columns */
-.grid-item--width2 {
-  width: 48%;
-  margin: 1%;
-  height: auto;
+@media (max-width: 800px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  /* 2 columns */
+  .grid-sizer, .grid-item {
+    width: 46%;
+    margin: 1%;
+    height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  /* 2 columns */
+  .grid-sizer, .grid-item {
+    width: 100%;
+    margin-bottom: 1%;
+    height: auto;
+  }
 }
 
 .grid-item, .grid-item--width2 {
