@@ -1,0 +1,123 @@
+#topnav, #contactinfo, #welcome, .showcase {
+  background-color:#05668D;
+}
+
+#topnav>a, #topnav>div>ul>li>a, #contactinfo>.row>ul>li>a, #bio, .showcase {
+  color: #F0F3BD;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#F0F3BD' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#contactinfo>.row>ul>li>a {
+  font-size: 0.75em;
+}
+
+body {
+  /* background-color: #F0F3BD; */
+  font-size: 16px;
+  font-family: Bembo;
+  background-image: url('https://i.pinimg.com/originals/8f/be/c9/8fbec99694af2cf87b04199702bd4568.png');
+  background-repeat: repeat;
+  background-size: 350px;
+}
+
+#bio {
+  text-align: center;
+}
+
+.category {
+  font-size: 2em;
+  font-style: oblique;
+}
+
+#bio>p, #library>p {
+  font-size: 1.25em;
+}
+
+.showcase {
+  text-align: center;
+  padding: 20px;
+  border: solid #F0F3BD 5px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.column {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#inline>.row, #inline>.row>.column {
+  display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.vbox-inline {
+  overflow: hidden;
+  border: solid #F0F3BD 5px;
+  border-radius: 5px;
+}
+
+.reviewpic {
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.reviewtext {
+  color: #F0F3BD;
+  text-align: left;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.reviewtext>h1 {
+  font-size: 1.5em;
+}
+
+.reviewtext>h2 {
+  font-size: 1.25em;
+}
+
+.reviewtext>h2>a {
+  color: #F0F3BD;
+}
+
+.reviewtext>p {
+  font-size: 1em;
+}
+
+.showcase>h2 {
+  font-size: 1.5em;
+}
+
+.showcase>p {
+  font-size: 1.25em;
+}
+
+.framed {
+  border: solid #F0F3BD 5px;
+  border-radius: 5px;
+}
+
+.nav-item:hover{
+  color: #5EC3FF;
+  text-decoration: underline;
+}
+
+a>.framed:hover {
+  border-color: #5EC3FF;
+}
+
+#lists>div>div:hover {
+  border-color: #5EC3FF;
+  color: #5EC3FF;
+}
+
+.showcase>p {
+  margin: 0px;
+}

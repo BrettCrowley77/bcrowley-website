@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from BCrowley_App.models import Media, Inspiration, Project
+from BCrowley_App.models import Media
 
 # Create your views here.
 def index(request):
@@ -9,10 +9,7 @@ def ideas(request):
     return render(request, 'BCrowley_App/ideas.html')
 
 def inspiration(request):
-    inspiration_records = Inspiration.objects.order_by('description')
-
-    inspiration_dict = {'inspiration_list':inspiration_records,}
-    return render(request, 'BCrowley_App/inspiration.html', context=inspiration_dict)
+    return render(request, 'BCrowley_App/inspiration.html')
 
 def lists(request):
     book_records = Media.objects.filter(med_type="BK").order_by('title')
@@ -24,7 +21,4 @@ def lists(request):
     return render(request, 'BCrowley_App/lists.html', context=media_dict)
 
 def projects(request):
-    project_records = Project.objects.order_by('project_name')
-
-    project_dict = {'project_list':project_records,}
-    return render(request, 'BCrowley_App/projects.html', context=project_dict)
+    return render(request, 'BCrowley_App/projects.html')

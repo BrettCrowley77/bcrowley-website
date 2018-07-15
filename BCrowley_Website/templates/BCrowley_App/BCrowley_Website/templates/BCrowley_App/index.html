@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "BCrowley_App/base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+    <!-- Welcome container -->
+    <div class='container'>
+      <div id='welcome' class='jumbotron framed'>
+        <div class='row'>
+            <div id='profile' class='col-lg-6 col-sm-12'><img class='profileslide framed' src="{% static "img/profile1.jpg" %}"></div>
+    	    <div id='bio' class='col-lg-6 col-sm-12'>
+    				<h1 class='category'>Welcome to my personal web site.</h1>
+    				<p>I am a curiously-minded civil engineering graduate, competitive distance runner,
+              avid reader and aspiring computer programmer. This site is a place for me to share some of my favourite
+              things, in the hope that they might be as meaningful to others as they have been to me.</p>
+    			</div>
+        </div>
+      </div>
+		</div>
+    <!-- Current container -->
+	<div id='current' class='container'>
+        <div class= "row">
+            <div id="currentread" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
+              <div class='showcase'>
+                <h2 class='category'>Currently reading</h2>
+                <a class="venobox_custom" data-vbtype="inline" href="#happinessisachoice"><img src='http://t1.gstatic.com/images?q=tbn:ANd9GcRx7dTrNVi3swpxha6KUdpLwrMb5gC51ZSd8zNErJ2i2mpKDKID' alt='Happiness Is A Choice You Make by John Leland' class='center framed'></a>
+                  <div id="happinessisachoice" class="nodisplay">
+                      <div class="row">
+                        <div class='column col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+                          <img src='http://t1.gstatic.com/images?q=tbn:ANd9GcRx7dTrNVi3swpxha6KUdpLwrMb5gC51ZSd8zNErJ2i2mpKDKID' alt='Happiness Is A Choice You Make by John Leland' class='reviewpic center'>
+                        </div>
+                        <div class='column col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+                          <div class="reviewtext center">
+                            <h1 class='category'>My rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h1><br />
+                            <h2 class='category'><a href="https://www.goodreads.com/book/show/35259558-happiness-is-a-choice-you-make" target='_blank'>Find it on Goodreads</a></h2>
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div id="currentproject" class='column col-lg-3 col-md-3 col-sm-6 col-xs-12'>
+              <div class='showcase'>
+                <h2 class='category'>Current project</h2>
+                <p class='middle'>My current project is making this website. I'm taking a Udemy course on Full-Stack development to guide my learning.</p>
+              </div>
+            </div>
+      		<div id="recentpost" class='column col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+                <div class='showcase'>
+                    <h2 class='category'>Latest post</h2>
+                        <div class='iframe-container framed'>
+                            <iframe src='https://brettcrowley77.wordpress.com/2018/02/04/the-glory-of-the-small/' allowfullscreen="" scrolling="yes" seamless="seamless"></iframe>
+                        </div>
+                </div>
+            </div>
+	    </div>
+    </div>
+{% endblock %}
