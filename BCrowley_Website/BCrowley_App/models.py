@@ -65,6 +65,6 @@ class Inspiration(models.Model):
 class Project(models.Model):
 
     project_name = models.CharField(max_length=264,unique=False)
-    cover_photo_local = models.FilePathField(path='/home/brettcrowley77/bcrowley-website/BCrowley_Website/static/img', blank=True)
+    cover_photo_local = models.CharField(max_length=264, blank=True)
     cover_photo_remote = models.URLField(max_length=264,unique=False, blank=True)
     online_reference = models.URLField(max_length=264,unique=False, blank=True)

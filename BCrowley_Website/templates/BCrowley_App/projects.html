@@ -10,7 +10,7 @@
         {% for project in project_list %}
           {% if project.cover_photo_local %}
           <div class='grid-item showcase'>
-            <a href='{{project.online_reference}}' target='_blank'>{{project.cover_photo_local}}</a>
+            <a href='{{project.online_reference}}' target='_blank'><img src='{% static project.cover_photo_local %}' class='center framed'></a>
             <p><em>{{project.project_name}}</em></p>
           </div>
           {% endif %}
