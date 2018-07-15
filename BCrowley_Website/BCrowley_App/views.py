@@ -5,9 +5,6 @@ from BCrowley_App.models import Media, Inspiration, Project
 def index(request):
     return render(request, 'BCrowley_App/index.html')
 
-def ideas(request):
-    return render(request, 'BCrowley_App/ideas.html')
-
 def inspiration(request):
     inspiration_records = Inspiration.objects.order_by('description')
 
