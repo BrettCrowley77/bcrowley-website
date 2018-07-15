@@ -62,7 +62,7 @@ class Inspiration(models.Model):
     def __str__(self):
         return self.id_name
 
-class Projects(models.Model):
+class Project(models.Model):
 
     project_name = models.CharField(max_length=264,unique=False)
     cover_photo = models.URLField(max_length=264,unique=False, blank=True)
