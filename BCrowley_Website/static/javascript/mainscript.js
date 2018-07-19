@@ -18,19 +18,17 @@ $(document).ready(function(){
 		numeratio: false
 	});
 
-	$('.grid').masonry({
-	  // set itemSelector so .grid-sizer is not used in layout
-	  itemSelector: '.grid-item',
-	  // use element for option
-	  columnWidth: '.grid-sizer',
-		gutter: 0,
-	  percentPosition: true,
-		horizontalOrder: true
-	});
-
-	$grid.imagesLoaded().progress( function() {
-  	$grid.masonry('layout');
-	});
+	// init isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.grid-item',
+  masonry: {
+    columnWidth: '.grid-sizer'
+  }
+});
+// reveal all items after init
+var $items = $grid.find('.grid-item');
+$grid.addClass('is-showing-items')
+  .isotope( 'revealItemElements', $items );
 
 });
 
