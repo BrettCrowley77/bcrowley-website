@@ -18,6 +18,7 @@ $(document).ready(function(){
 		numeratio: false
 	});
 
+var $grid = $('.grid').imagesLoaded( function() {
 	$('.grid').masonry({
 	  // set itemSelector so .grid-sizer is not used in layout
 	  itemSelector: '.grid-item',
@@ -27,11 +28,7 @@ $(document).ready(function(){
 	  percentPosition: true,
 		horizontalOrder: true
 	});
-
-	// layout Masonry after each image loads
-	$grid.imagesLoaded().progress( function() {
-	  $grid.masonry('layout');
-	});
+});
 
 	var togglebookshelf = function(){
 
