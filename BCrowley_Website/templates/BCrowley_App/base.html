@@ -51,6 +51,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script>
+       docReady(function() {
+
+        var grid = document.querySelector('.grid');
+        var msnry;
+
+        imagesLoaded( grid, function() {
+          // init Isotope after all images have loaded
+          msnry = new Masonry( grid, {
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+          });
+        });
+
+      });
+    </script>
     <script src="{% static "venobox/venobox.js" %}" type="text/javascript"></script>
     <script src="{% static "javascript/mainscript.js" %}" type="text/javascript"></script>
   </body>
