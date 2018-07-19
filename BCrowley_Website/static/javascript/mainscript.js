@@ -18,90 +18,96 @@ $(document).ready(function(){
 		numeratio: false
 	});
 
-});
+	$('.grid').masonry({
+	  // set itemSelector so .grid-sizer is not used in layout
+	  itemSelector: '.grid-item',
+	  // use element for option
+	  columnWidth: '.grid-sizer',
+		gutter: 0,
+	  percentPosition: true,
+		horizontalOrder: true
+	});
 
-var togglebookshelf = function(){
+	// layout Masonry after each image loads
+	$grid.imagesLoaded().progress( function() {
+	  $grid.masonry('layout');
+	});
 
-	var shelves = ['#movieshelf', '#musicshelf', '#articleshelf'];
+	var togglebookshelf = function(){
 
-	for (i = 0; i < shelves.length; i++) {
-		if ($(shelves[i]).css('class') !== 'row hide') {
-	    $(shelves[i]).addClass('hide');
-	  }
-	}
+		var shelves = ['#movieshelf', '#musicshelf', '#articleshelf'];
 
-  $('#bookshelf').toggleClass('hide');
-}
-
-var togglemovieshelf = function(){
-
-	var shelves = ['#bookshelf', '#musicshelf', '#articleshelf'];
-
-	for (i = 0; i < shelves.length; i++) {
-		if ($(shelves[i]).css('class') !== 'row hide') {
-			$(shelves[i]).addClass('hide');
+		for (i = 0; i < shelves.length; i++) {
+			if ($(shelves[i]).css('class') !== 'row hide') {
+		    $(shelves[i]).addClass('hide');
+		  }
 		}
+
+	  $('#bookshelf').toggleClass('hide');
 	}
 
-  $('#movieshelf').toggleClass('hide');
-}
+	var togglemovieshelf = function(){
 
-var togglemusicshelf = function(){
+		var shelves = ['#bookshelf', '#musicshelf', '#articleshelf'];
 
-	var shelves = ['#bookshelf', '#movieshelf', '#articleshelf'];
-
-	for (i = 0; i < shelves.length; i++) {
-		if ($(shelves[i]).css('class') !== 'row hide') {
-			$(shelves[i]).addClass('hide');
+		for (i = 0; i < shelves.length; i++) {
+			if ($(shelves[i]).css('class') !== 'row hide') {
+				$(shelves[i]).addClass('hide');
+			}
 		}
+
+	  $('#movieshelf').toggleClass('hide');
 	}
 
-  $('#musicshelf').toggleClass('hide');
-}
+	var togglemusicshelf = function(){
 
-var togglearticleshelf = function(){
+		var shelves = ['#bookshelf', '#movieshelf', '#articleshelf'];
 
-	var shelves = ['#bookshelf', '#movieshelf', '#musicshelf'];
-
-	for (i = 0; i < shelves.length; i++) {
-		if ($(shelves[i]).css('class') !== 'row hide') {
-			$(shelves[i]).addClass('hide');
+		for (i = 0; i < shelves.length; i++) {
+			if ($(shelves[i]).css('class') !== 'row hide') {
+				$(shelves[i]).addClass('hide');
+			}
 		}
+
+	  $('#musicshelf').toggleClass('hide');
 	}
 
-  $('#articleshelf').toggleClass('hide');
-}
+	var togglearticleshelf = function(){
 
-$('#books').click(togglebookshelf);
+		var shelves = ['#bookshelf', '#movieshelf', '#musicshelf'];
 
-$('#movies').click(togglemovieshelf);
+		for (i = 0; i < shelves.length; i++) {
+			if ($(shelves[i]).css('class') !== 'row hide') {
+				$(shelves[i]).addClass('hide');
+			}
+		}
 
-$('#music').click(togglemusicshelf);
+	  $('#articleshelf').toggleClass('hide');
+	}
 
-$('#articles').click(togglearticleshelf);
+	$('#books').click(togglebookshelf);
 
-var counter = 0;
+	$('#movies').click(togglemovieshelf);
 
-var slideshow = function(){
-    var photonumber = (counter+1).toString();
-		var imgsrc = 'static/img/profile' + photonumber + '.jpg';
-    if (counter==3) {
-      $('.profileslide').attr('src', imgsrc);
-      counter=0;
-    } else {
-    $('.profileslide').attr('src', imgsrc);
-    counter++;
-    };
-  };
+	$('#music').click(togglemusicshelf);
 
-setInterval(slideshow, 4000);
+	$('#articles').click(togglearticleshelf);
 
-$('.grid').masonry({
-  // set itemSelector so .grid-sizer is not used in layout
-  itemSelector: '.grid-item',
-  // use element for option
-  columnWidth: '.grid-sizer',
-	gutter: 0,
-  percentPosition: true,
-	horizontalOrder: true
+	var counter = 0;
+
+	var slideshow = function(){
+	    var photonumber = (counter+1).toString();
+			var imgsrc = 'static/img/profile' + photonumber + '.jpg';
+	    if (counter==3) {
+	      $('.profileslide').attr('src', imgsrc);
+	      counter=0;
+	    } else {
+	    $('.profileslide').attr('src', imgsrc);
+	    counter++;
+	    };
+	  };
+
+	setInterval(slideshow, 4000);
+
+
 });
