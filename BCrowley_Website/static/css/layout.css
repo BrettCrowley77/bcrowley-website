@@ -121,8 +121,16 @@ iframe {
   float: center;
 }
 
+.not-showing-items {
+  opacity: 0;
+}
+
 .is-showing-items .grid-item {
   opacity: 1; /* reveal when ready */
+}
+
+.nodisplay {
+  display: none;
 }
 
 /* clearfix */

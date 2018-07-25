@@ -18,17 +18,21 @@ $(document).ready(function(){
 		numeratio: false
 	});
 
-	// init isotope
-var $grid = $('.grid').isotope({
-  itemSelector: '.grid-item',
-  masonry: {
-    columnWidth: '.grid-sizer'
-  }
-});
-// reveal all items after init
-var $items = $grid.find('.grid-item');
-$grid.addClass('is-showing-items')
-  .isotope( 'revealItemElements', $items );
+		// init isotope
+	var $grid = $('.grid').isotope({
+	  itemSelector: '.grid-item',
+	  masonry: {
+	    columnWidth: '.grid-sizer'
+	  }
+	});
+
+	// layout Masonry after each image loads
+	$grid.imagesLoaded(function() {
+		var $items = $grid.find('.grid-item');
+		$grid.removeClass('not-showing-items');
+		$grid.addClass('is-showing-items')
+		  .isotope( 'revealItemElements', $items );
+	});
 
 });
 
