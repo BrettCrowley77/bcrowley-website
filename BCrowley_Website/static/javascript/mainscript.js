@@ -19,15 +19,16 @@ $(document).ready(function(){
 	});
 
 		// init isotope
-	var $grid = $('.grid').isotope({
-	  itemSelector: '.grid-item',
-	  masonry: {
-	    columnWidth: '.grid-sizer'
-	  }
-	});
+
 
 	// layout Masonry after each image loads
-	$grid.imagesLoaded(function() {
+	$('.grid').imagesLoaded(function() {
+		var $grid = $('.grid').isotope({
+			itemSelector: '.grid-item',
+			masonry: {
+				columnWidth: '.grid-sizer'
+			}
+		});
 		var $items = $grid.find('.grid-item');
 		$grid.removeClass('not-showing-items');
 		$grid.addClass('is-showing-items')
