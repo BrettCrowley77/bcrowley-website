@@ -18,9 +18,6 @@ $(document).ready(function(){
 		numeratio: false
 	});
 
-		// init isotope
-
-
 	// layout Masonry after each image loads
 	$('.grid').imagesLoaded(function() {
 		var $grid = $('.grid').isotope({
